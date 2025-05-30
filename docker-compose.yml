@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  postgres_olist:
+    image: postgres:latest
+    container_name: postgres_olist
+    environment:
+      POSTGRES_USER: olistuser
+      POSTGRES_PASSWORD: olistpass
+      POSTGRES_DB: olist_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./data:/data
+      - ./infra_setup/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - olist_network
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase-olist
+    hostname: metabase
+      #depends_on:
+      #- postgres
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: olist_db
+      MB_DB_PORT: 5432
+      MB_DB_USER: olistuser
+      MB_DB_PASS: olistpass
+      MB_DB_HOST: postgres_olist
+    volumes:
+      - ./metabase_data:/meta_data
+      - /dev/urandom:/dev/random:ro
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: curl --fail -I http://localhost:3000/api/health || exit 1
+      interval: 15s
+      timeout: 5s
+      retries: 5
+    networks:
+      - olist_network
+
+
+volumes:
+  postgres_data:
+
+networks:
+  olist_network:
+    driver: bridge
