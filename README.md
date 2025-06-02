@@ -1,23 +1,36 @@
 # OList Project
 ---------------
-- make sure you have ```docker```, ```docker-compose``` installed before you proceed
-run ```sudo docker-compose up```
-use ```sudo docker-compose up - d```
+<strong>purpose</strong>: Analytics Engineering.
+## Introduction
 
-this sstarts the ```postgres``` ansd ```metabase``` service 
+This project uses docker, postgres and dbt to extract, Load and transform olist data for analysis and then metabase to visalise our findings
 
-db_type: postgres
-db_name: olist_db
-db_user: olistuser
-db_pass: olistpass
-db_host: localhost
-project_name: olist_project
-schema: olist
-threads: 4
+<strong>Data Source:</strong> https://www.kaggle.com/api/v1/datasets/download/erak1006/brazilian-e-commerce-company-olist
+
+make sure to have ```docker``` and ```docker-compose``` installed before you proceed
+
+---------------------------------------
+
+run ```git clone https://PAT@github.com/Reganmatics/OList.git``` PAT is your github personal access token
+
+next, run ```sudo docker-compose up``` or use ```sudo docker-compose up - d``` if you've got a bit of experience using docker.
+
+this starts the ```postgres``` ansd ```metabase``` service 
+
+next run the ```./script.sh``` to download the olist data and structure the directory for our project.
+
+### dbt and docker-compose details
+- db_type: postgres
+- db_name: olist_db
+- db_user: olistuser
+- db_pass: olistpass
+- db_host: localhost
+- project_name: olist_project
+- schema: olist
+- threads: 4 (use 1 to avoid very unneccessary errrors)
 
 
-## Tables
----------
+## Olist Tables
 - customers
 - geolocation
 - order_items
