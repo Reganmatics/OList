@@ -29,6 +29,9 @@ next run the ```./script.sh``` to download the olist data and structure the dire
 - schema: olist
 - threads: 4 (use 1 to avoid very unneccessary errrors)
 
+#### metabase login
+email: snrdevtest@gmail.com
+pass: olistpass1
 
 ## Olist Tables
 - customers
