@@ -1,0 +1,69 @@
+version: 2
+sources:
+  - name: raw
+    database: olist_db
+    schema: olist
+    tables:
+      - name: customers
+        description: Raw customer data from the CRM system
+        columns:
+          - name: customer_id
+            tests:
+              - unique
+              - not_null
+
+      - name: geolocation
+        description: Raw geolcation data (Brazil)
+        columns:
+          - name: geolocation_zip_code_prefix
+            tests:
+              - not_null
+      
+      - name: order_items
+        description: Raw order_items data
+        columns:
+          - name: order_id
+            tests:
+              - not_null
+
+      - name: order_payments
+        description: Raw order_payments data
+        columns:
+          - name: order_id
+            tests:
+              - not_null
+      
+      - name: order_reviews
+        description: Raw order_reviews data
+        columns:
+          - name: review_id
+            tests:
+              - not_null
+
+      - name: orders
+        description: Raw order data
+        columns:
+          - name: order_id
+            tests:
+              - not_null
+
+      - name: products
+        description: Raw products data
+        columns:
+          - name: product_id
+            tests:
+              - not_null
+
+      - name: sellers
+        description: Raw sellers data
+        columns:
+          - name: seller_id
+            tests:
+              - not_null
+      
+      - name: product_category_name_translation
+        description: Raw product_category_name data
+        columns:
+          - name: product_category_name
+            tests:
+              - not_null

@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: int_order_payments
+    description: combines the orders and order_payments tables
+    columns:
+      - name: order_id
+        test: not_null
+      - name: order_approved_at
+        test: not_null
+      - name: payment_value
+        test: not_null
+
+  - name: int_order_items_products
+    description: combines the order_items, products, and the product_name_translation tables to compute 
+      the orders for each productcategory
+    columns:
+      - name: order_id
+        test: not_null
+
+      - name: product_category
+        test: not_null
