@@ -11,27 +11,47 @@ make sure to have ```docker``` and ```docker-compose``` installed before you pro
 
 ---------------------------------------
 
-run ```git clone https://PAT@github.com/Reganmatics/OList.git``` PAT is your github personal access token
+1. run ```git clone https://PAT@github.com/Reganmatics/OList.git``` PAT is your github personal access token
 
-next, run ```sudo docker-compose up``` or use ```sudo docker-compose up - d``` if you've got a bit of experience using docker.
+2. next copy and paste te code below to your terminal, to install/update the requisite packages;
 
-this starts the ```postgres``` ansd ```metabase``` service 
+    ```
+    sudo apt update && sudo apt install -y \
+    python3-pip \
+    python3-venv \
+    unzip \
+    curl \
+    docker-compose \
+    docker.io
+    ```
 
-next run the ```./script.sh``` to download the olist data and structure the directory for our project.
+    this starts the ```postgres``` and ```metabase``` service 
 
-### dbt and docker-compose details
-- db_type: postgres
-- db_name: olist_db
-- db_user: olistuser
-- db_pass: olistpass
-- db_host: localhost
-- project_name: olist_project
-- schema: olist
-- threads: 4 (use 1 to avoid very unneccessary errrors)
+3. next run `./scrpts/clean.py`, then 
+`sudo docker-compose up`
+ to also run the *postgres* and *metabase* services and also create and populate all tables for the olist project.
 
-#### metabase login
-email: snrdevtest@gmail.com
-pass: olistpass1
+## dbt
+
+Project details
+
+open `~/.dbt/profiles.yml` and paste the following into a new line
+```
+olist_project:
+  outputs:
+    dev:
+      dbname: olist_db
+      host: localhost
+      pass: olistpass
+      port: 5432
+      schema: olist
+      threads: 1
+      type: postgres
+      user: olistuser
+  target: dev
+```
+
+run `dbt debug` to test the connection
 
 ## Olist Tables
 - customers
@@ -67,13 +87,15 @@ pass: olistpass1
 - ### filters
 - product category
 
-
 1. highest order
 2. customer with the highest order
 3. 
 
 
-
 ### Revenue and orders over time
 
 1. stg_
+
+## metabase
+- email: snrdevtest@gmail.com
+- pass: olistpass1
