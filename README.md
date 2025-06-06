@@ -72,10 +72,6 @@ run `dbt debug` to test the connection
 4. revene by product category
 5. orders by product category over time
 
-- ### filters
-- date range
-- date grouping
-- product category
 
 ### portfolio performance
 1. best selling product

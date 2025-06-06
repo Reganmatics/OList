@@ -1,80 +1,46 @@
-# script
+#!/usr/bin/env python3
+"""
+this script cleans and saves csv files to a new directory
+"""
 
-import os
-import sys
-import numpy as np
 import pandas as pd
-import psycopg2
-import matplotlib.pyplot as plt
+import os
+
+data_dir = './data'
 
 
-db_host='localhost'
-db_name='olist_db'
-db_user='olistuser'
-db_pass='olistpass'
+def clean(df, df_csv):
+    """
+    cleans the csv files and saves the cleaned copy as a new csv file
+    variables:
+        df: dataframe to clean
+        df_csv: name of csv file to save the cleaned copy
 
-data_dir = '../data'
+    return:
+        cleaned dataframe
+    """
+    for col in df.columns:
+        if df[f'{col}'].isnull().sum() / len(df) >= 0.5:
+            df = df.drop(columns=f'{col}')
+    df.to_csv(f'{data_dir}/clean/{df_csv}')
+    return df
 
-def clean():
-    for col in reviews.columns:
-        if reviews[f'{col}'].isnull().sum() / len(reviews) >= 0.5:
-            reviews = reviews.drop(columns=f'{col}')
-    reviews.to_csv(f'{data_dir}/clean/olist_order_reviews_dataset.csv')
 
-def connect_to_database():
-    """Establish a connection to the PostgreSQL database."""
-    try:
-        connection = psycopg2.connect(
-            dbname=db_name,
-            user=db_user,
-            password=db_pass,
-            host=db_host
-        )
-        return connection
-    except Error as e:
-        print(f"Error connecting to database: {e}")
-        return None
-    
-    
-def insert_order_reviews(connection, df):
-    """Insert data into the order_reviews table."""
-    try:
-        cursor = connection.cursor()
-        insert_query = """
-            INSERT INTO olist.order_reviews (
-                review_id,
-                order_id,
-                review_score,
-                review_creation_date,
-                review_answer_timestamp
-            ) VALUES (
-                %s, %s, %s, %s, %s
-            )
-        """
-        for index, row in df.iterrows():
-            review_data = (
-                row['review_id'],
-                row['order_id'],
-                row['review_score'],
-                row['review_creation_date'],
-                row['review_answer_timestamp']
-            )
-            cursor.execute(insert_query, review_data)
-        connection.commit()
-        print("Order reviews inserted successfully.")
-    except Error as e:
-        print(f"Error inserting order reviews: {e}")
-        connection.rollback()
+def fill_nulls(df, df_csv):
+    df = df.fillna('nill')
+    df.to_csv(f'{data_dir}/clean/{df_csv}', index=False)
 
-    
 
 def main():
-    db_host='localhost'
-    db_name='olist_db'
-    db_user='olistuser'
-    db_pass='olistpass'
+    """
+    main function
+    """
 
-    data_dir = '../data'
-    
-    connection = connect_to_database()
-    insert_order_reviews(connection, reviews)
+    #print('run this script at the root of the project\nOList')
+    data_dir = './data'
+
+    reviews = pd.read_csv(f'{data_dir}/order_reviews_dataset.csv')
+    fill_nulls(reviews, 'order_reviews_dataset.csv')
+
+print(os.getcwd())
+main()

@@ -50,14 +50,14 @@ create table if not exists olist.order_reviews (
 	review_id text,
 	order_id uuid,
 	review_score int,
-	-- review_comment_title text,
-	-- review_comment_message text,
+	review_comment_title text,
+	review_comment_message text,
 	review_creation_date timestamp with time zone,
 	review_answer_timestamp timestamp with time zone
 );
 
--- copy olist.order_reviews (review_id, order_id, review_score, review_creation_date, review_answer_timestamp)
--- from '/data/order_reviews_dataset.csv' DELIMITER ',' CSV HEADER;
+copy olist.order_reviews (review_id, order_id, review_score, review_comment_title, review_comment_message, review_creation_date, review_answer_timestamp)
+from '/data/clean/order_reviews_dataset.csv' DELIMITER ',' CSV HEADER;
 
 create table olist.orders (
 	order_id uuid PRIMARY KEY,
@@ -104,4 +104,4 @@ create table if not exists olist.product_category_name_translation (
 );
 
 copy olist.product_category_name_translation (product_category_name, product_category_name_english)
-from '/data/product_category_name_translation_dataset.csv' DELIMITER ',' CSV HEADER;
+from '/data/product_category_name_translation.csv' DELIMITER ',' CSV HEADER;
