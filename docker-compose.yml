@@ -32,7 +32,6 @@ services:
 
 volumes:
   postgres_data:
-  metabase_data:
 
 networks:
   olist_network:

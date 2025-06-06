@@ -1,0 +1,160 @@
+[0m12:43:22.916572 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x783dc457e210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x783dc1a4d370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x783dc3e77500>]}
+
+
+============================== 12:43:22.921931 | a7f50285-c169-4fad-9a8a-b0071a6a089a ==============================
+[0m12:43:22.921931 [info ] [MainThread]: Running with dbt=1.9.4
+[0m12:43:22.922608 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/reganmatics/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:43:22.941557 [info ] [MainThread]: dbt version: 1.9.4
+[0m12:43:22.942101 [info ] [MainThread]: python version: 3.12.3
+[0m12:43:22.942585 [info ] [MainThread]: python path: /home/reganmatics/Desktop/DEV/altschool/OList/venv/bin/python3
+[0m12:43:22.943031 [info ] [MainThread]: os info: Linux-6.8.0-40-generic-x86_64-with-glibc2.39
+[0m12:43:22.950843 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m12:43:23.053994 [info ] [MainThread]: Using profiles dir at /home/reganmatics/.dbt
+[0m12:43:23.054526 [info ] [MainThread]: Using profiles.yml file at /home/reganmatics/.dbt/profiles.yml
+[0m12:43:23.055011 [info ] [MainThread]: Using dbt_project.yml file at /home/reganmatics/Desktop/DEV/altschool/OList/dbt_project.yml
+[0m12:43:23.055566 [info ] [MainThread]: Configuration:
+[0m12:43:23.056043 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m12:43:23.056508 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m12:43:23.057037 [info ] [MainThread]: Required dependencies:
+[0m12:43:23.057629 [debug] [MainThread]: Executing "git --help"
+[0m12:43:23.060997 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:43:23.061683 [debug] [MainThread]: STDERR: "b''"
+[0m12:43:23.062274 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:43:23.062799 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m12:43:23.063288 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m12:43:23.063752 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "BrazilEcommerceData", target "prod" invalid: Runtime Error
+    Could not find adapter type bigquery!
+
+
+[0m12:43:23.064184 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/reganmatics/Desktop/DEV/altschool/OList/dbt_project.yml> not found
+
+[0m12:43:23.065674 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.21119301, "process_in_blocks": "57408", "process_kernel_time": 0.192088, "process_mem_max_rss": "98496", "process_out_blocks": "16", "process_user_time": 1.716851}
+[0m12:43:23.066262 [debug] [MainThread]: Command `dbt debug` failed at 12:43:23.066122 after 0.21 seconds
+[0m12:43:23.066748 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x783dc512d7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x783dc20311f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x783dc2627bf0>]}
+[0m12:43:23.067287 [debug] [MainThread]: Flushing usage events
+[0m12:43:24.467205 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:45:36.571195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74766252e930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x747661c14ef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7476640af650>]}
+
+
+============================== 12:45:36.574850 | 8e3a310a-e2f5-4a68-a640-a022ccd25789 ==============================
+[0m12:45:36.574850 [info ] [MainThread]: Running with dbt=1.9.4
+[0m12:45:36.575799 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': '/home/reganmatics/.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:45:36.588130 [info ] [MainThread]: dbt version: 1.9.4
+[0m12:45:36.588681 [info ] [MainThread]: python version: 3.12.3
+[0m12:45:36.589153 [info ] [MainThread]: python path: /home/reganmatics/Desktop/DEV/altschool/OList/venv/bin/python3
+[0m12:45:36.589606 [info ] [MainThread]: os info: Linux-6.8.0-40-generic-x86_64-with-glibc2.39
+[0m12:45:36.595555 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m12:45:36.661239 [info ] [MainThread]: Using profiles dir at /home/reganmatics/.dbt
+[0m12:45:36.661783 [info ] [MainThread]: Using profiles.yml file at /home/reganmatics/.dbt/profiles.yml
+[0m12:45:36.662225 [info ] [MainThread]: Using dbt_project.yml file at /home/reganmatics/Desktop/DEV/altschool/OList/dbt_project.yml
+[0m12:45:36.662682 [info ] [MainThread]: Configuration:
+[0m12:45:36.663107 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m12:45:36.663490 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m12:45:36.663881 [info ] [MainThread]: Required dependencies:
+[0m12:45:36.664304 [debug] [MainThread]: Executing "git --help"
+[0m12:45:36.666510 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m12:45:36.667312 [debug] [MainThread]: STDERR: "b''"
+[0m12:45:36.667857 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m12:45:36.668333 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m12:45:36.668863 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m12:45:36.669298 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "BrazilEcommerceData", target "prod" invalid: Runtime Error
+    Could not find adapter type bigquery!
+
+
+[0m12:45:36.669863 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/reganmatics/Desktop/DEV/altschool/OList/dbt_project.yml> not found
+
+[0m12:45:36.670974 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.15952353, "process_in_blocks": "0", "process_kernel_time": 0.123924, "process_mem_max_rss": "98860", "process_out_blocks": "16", "process_user_time": 1.62401}
+[0m12:45:36.671686 [debug] [MainThread]: Command `dbt debug` failed at 12:45:36.671455 after 0.16 seconds
+[0m12:45:36.672374 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x747661c6a840>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74766618b710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7476626e0d40>]}
+[0m12:45:36.673180 [debug] [MainThread]: Flushing usage events
+[0m12:45:37.913128 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:16:32.233797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712cc915e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712cca9b740>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712ce5e5d60>]}
+
+
+============================== 13:16:32.248000 | e9d5b30d-16d5-4d58-90d8-2bcb6902f97d ==============================
+[0m13:16:32.248000 [info ] [MainThread]: Running with dbt=1.9.4
+[0m13:16:32.249155 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/home/reganmatics/.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt debug', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:16:32.279177 [info ] [MainThread]: dbt version: 1.9.4
+[0m13:16:32.280031 [info ] [MainThread]: python version: 3.12.3
+[0m13:16:32.280795 [info ] [MainThread]: python path: /home/reganmatics/Desktop/DEV/altschool/OList/venv/bin/python3
+[0m13:16:32.281518 [info ] [MainThread]: os info: Linux-6.8.0-40-generic-x86_64-with-glibc2.39
+[0m13:16:32.293403 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m13:16:32.433908 [info ] [MainThread]: Using profiles dir at /home/reganmatics/.dbt
+[0m13:16:32.434718 [info ] [MainThread]: Using profiles.yml file at /home/reganmatics/.dbt/profiles.yml
+[0m13:16:32.435380 [info ] [MainThread]: Using dbt_project.yml file at /home/reganmatics/Desktop/DEV/altschool/OList/dbt_project.yml
+[0m13:16:32.436109 [info ] [MainThread]: Configuration:
+[0m13:16:32.436752 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m13:16:32.437411 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m13:16:32.438182 [info ] [MainThread]: Required dependencies:
+[0m13:16:32.438914 [debug] [MainThread]: Executing "git --help"
+[0m13:16:32.441953 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:16:32.442795 [debug] [MainThread]: STDERR: "b''"
+[0m13:16:32.443402 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:16:32.444070 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m13:16:32.451211 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m13:16:32.452197 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "BrazilEcommerceData", target "prod" invalid: Runtime Error
+    Could not find adapter type bigquery!
+
+
+[0m13:16:32.453765 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/reganmatics/Desktop/DEV/altschool/OList/dbt_project.yml> not found
+
+[0m13:16:32.455858 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.3636623, "process_in_blocks": "64", "process_kernel_time": 0.191574, "process_mem_max_rss": "98768", "process_out_blocks": "16", "process_user_time": 2.556977}
+[0m13:16:32.457193 [debug] [MainThread]: Command `dbt debug` failed at 13:16:32.456926 after 0.37 seconds
+[0m13:16:32.458257 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712d03b3710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712cc705cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7712cc49b4a0>]}
+[0m13:16:32.459439 [debug] [MainThread]: Flushing usage events
+[0m13:16:33.835210 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:25:00.840687 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d4387c6ce30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d4387d4be30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d4388afc830>]}
+
+
+============================== 13:25:00.844216 | 899877ee-0a18-4862-8534-ea7afd00c03e ==============================
+[0m13:25:00.844216 [info ] [MainThread]: Running with dbt=1.9.4
+[0m13:25:00.845164 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/reganmatics/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:25:00.857463 [info ] [MainThread]: dbt version: 1.9.4
+[0m13:25:00.858027 [info ] [MainThread]: python version: 3.12.3
+[0m13:25:00.858474 [info ] [MainThread]: python path: /home/reganmatics/Desktop/DEV/altschool/OList/venv/bin/python3
+[0m13:25:00.858927 [info ] [MainThread]: os info: Linux-6.8.0-40-generic-x86_64-with-glibc2.39
+[0m13:25:00.864840 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.bigquery'
+[0m13:25:00.927411 [info ] [MainThread]: Using profiles dir at /home/reganmatics/.dbt
+[0m13:25:00.928024 [info ] [MainThread]: Using profiles.yml file at /home/reganmatics/.dbt/profiles.yml
+[0m13:25:00.928666 [info ] [MainThread]: Using dbt_project.yml file at /home/reganmatics/Desktop/DEV/altschool/OList/dbt_project.yml
+[0m13:25:00.929552 [info ] [MainThread]: Configuration:
+[0m13:25:00.930205 [info ] [MainThread]:   profiles.yml file [[31mERROR invalid[0m]
+[0m13:25:00.930864 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m13:25:00.931389 [info ] [MainThread]: Required dependencies:
+[0m13:25:00.931912 [debug] [MainThread]: Executing "git --help"
+[0m13:25:00.934535 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:25:00.935297 [debug] [MainThread]: STDERR: "b''"
+[0m13:25:00.935839 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:25:00.936363 [info ] [MainThread]: Connection test skipped since no profile was found
+[0m13:25:00.937055 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m13:25:00.937626 [info ] [MainThread]: Could not load dbt_project.yml
+Profile loading failed for the following reason:
+Runtime Error
+  Credentials in profile "BrazilEcommerceData", target "prod" invalid: Runtime Error
+    Could not find adapter type bigquery!
+
+
+[0m13:25:00.938102 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </home/reganmatics/Desktop/DEV/altschool/OList/dbt_project.yml> not found
+
+[0m13:25:00.939236 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 0.16055726, "process_in_blocks": "0", "process_kernel_time": 0.116708, "process_mem_max_rss": "98920", "process_out_blocks": "16", "process_user_time": 1.619948}
+[0m13:25:00.939889 [debug] [MainThread]: Command `dbt debug` failed at 13:25:00.939756 after 0.16 seconds
+[0m13:25:00.940343 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d4388405b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d438a077380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7d43876cce90>]}
+[0m13:25:00.940897 [debug] [MainThread]: Flushing usage events
+[0m13:25:02.801895 [debug] [MainThread]: An error was encountered while trying to flush usage events
