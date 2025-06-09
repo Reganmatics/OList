@@ -51,7 +51,8 @@ olist_project:
   target: dev
 ```
 
-run `dbt debug` to test the connection
+run `dbt debug` to test the connection, if everything works well, it should look like the imae below
+![dbt_debug_pass](/img/dbt_debug_pass.png)
 
 ## Olist Tables
 - customers
