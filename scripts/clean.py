@@ -7,6 +7,7 @@ import pandas as pd
 import os
 
 data_dir = './data'
+os.mkdir(f'{data_dir}/clean')
 
 
 def clean(df, df_csv):

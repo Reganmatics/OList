@@ -54,45 +54,20 @@ olist_project:
 run `dbt debug` to test the connection, if everything works well, it should look like the imae below
 ![dbt_debug_pass](/img/dbt_debug_pass.png)
 
-## Olist Tables
-- customers
-- geolocation
-- order_items
-- order_payments
-- order_reviews
-- orders
-- products
-- sellers
-- product_category
-
-## analytical questions
-### overview
-1. revenue and orders over time 
-2. revenue per quarter
-3. total order by product category
-4. revene by product category
-5. orders by product category over time
+next run ```dbt run``` and the output should look like 
 
 
-### portfolio performance
-1. best selling product
-2. revenue by state
-3. average product rating
-4. product with the highest ratingaverage product rating
-5. customer satisfaction per category
 
-- ### filters
-- product category
+we have the metabase homepage as 
+![dbt_debug_pass](/img/metabase_home.png)
 
-1. highest order
-2. customer with the highest order
-3. 
-
-
-### Revenue and orders over time
-
-1. stg_
 
 ## metabase
-- email: snrdevtest@gmail.com
-- pass: olistpass1
+you create your metabase instance with the following details;
+- email: your-email@host.com
+- pass: your_pass1
+- host: postgres_olist
+- database: postgres
+- db: olist_db
+- user: olistuser
+- password: olistpass
