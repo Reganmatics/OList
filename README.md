@@ -60,7 +60,7 @@ olist_project:
 
 
 run `dbt debug` to test the connection, if everything works well, it should look like the image below
-![dbt_debug_pass](/img/dbt_debug_pass.png)
+![dbt_debug_pass](https://raw.githubusercontent.com/Reganmatics/OList/main/img/dbt_debug_pass.png)
 
 next run ```dbt run``` and the output should look like 
 
