@@ -11,7 +11,7 @@ make sure to have ```docker``` and ```docker-compose``` installed before you pro
 
 ---------------------------------------
 
-1. run ```git clone https://PAT@github.com/Reganmatics/OList.git``` PAT is your github personal access token
+1. run ```git clone https://github.com/Reganmatics/OList.git``` PAT is your github personal access token
 
 2. next copy and paste te code below to your terminal, to install/update the requisite packages;
 
@@ -25,17 +25,24 @@ make sure to have ```docker``` and ```docker-compose``` installed before you pro
     docker.io
     ```
 
-    this starts the ```postgres``` and ```metabase``` service 
+3. create and activate the virtual environment
 
-3. next run `./scrpts/clean.py`, then 
-`sudo docker-compose up`
- to also run the *postgres* and *metabase* services and also create and populate all tables for the olist project.
+```
+python3 -m venv venv \
+source venv/bin/activate
+```
+
+4. run ```./scripts/auto.sh``` to istall all packages, download, clean and ingest data into the database. and then proceed with the dbt project.
+
+<strong>Note</strong>: an error is expected when running the ```./scripts/auto.sh``` script, ths is to ensure the user engages with the project.
+
+#### SOLUTION: READ THE DBT GUIE BELOW
 
 ## dbt
 
 Project details
 
-open `~/.dbt/profiles.yml` and paste the following into a new line
+open `~/.dbt/profiles.yml` and append the text below
 ```
 olist_project:
   outputs:
@@ -51,15 +58,20 @@ olist_project:
   target: dev
 ```
 
-run `dbt debug` to test the connection, if everything works well, it should look like the imae below
+
+run `dbt debug` to test the connection, if everything works well, it should look like the image below
 ![dbt_debug_pass](/img/dbt_debug_pass.png)
 
 next run ```dbt run``` and the output should look like 
 
+![dbt_debug_pass](/img/dbt_run.png)
 
 
 we have the metabase homepage as 
 ![dbt_debug_pass](/img/metabase_home.png)
+
+
+#### Now rerurn the ```./scripts/auto.sh``` script and it should run smoothly
 
 
 ## metabase
